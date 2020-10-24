@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="DullBlue">#0076bd</color>
+    <color name="DarkGrey">#0C0C0C</color>
+    <color name="Black">#000000</color>
+    <color name="Grey">#5C5C5C</color>
+    <color name="MainColorBlue">#0076BD</color>
+    <color name="DarkCobaltBlue"> #001735</color>
+    <color name="MainColorDarkGrey">#0C0C0C</color>
+    <color name="LightMainColorBlue">#58A4F0</color>
+    <color name="DarkMainColorBlue">#004B8C</color>
+    <color name="BackgroundColor">#FFFFFF</color>
+    <color name="White">#FFFFFF</color>
+    <color name="TextColor">#FFFFFF</color>
+    <color name="Red"> #800000</color>
+    <color name="Maroon1">#330000</color>
+    <color name="Maroon">#470A0A</color>
+    <color name="Blue">#0000FF</color>
+    <color name="DarkPurple">#670067</color>
+    <color name="LightPink">#EC407A</color>
+    <color name="DarkShadeOfPink">#C2185B</color>
+    <color name="CranePurple">#5D1049</color>
+    <color name="Purple">#6200EE</color>
+    <color name="LightMaroon">#773531</color>
+    <color name="user_background">#FFFFFF</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="transactions_background">#FFFFFF</color>
+    <color name="place_background">#FFFFFF</color>
+    <color name="payment_background">#FFFFFF</color>
+    <color name="iko_pay_background">#FFFFFF</color>
+    <color name="edit_background">#FFFFFF</color>
+    <color name="add_background">#FFFFFF</color>
+    <color name="Wh">#0C0C0C</color>
+    <color name="h">#F9C9C9</color>
+</resources>

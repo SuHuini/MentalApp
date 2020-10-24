@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MentHelApp</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="f_name">First Name</string>
+    <string name="l_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="prompt_email">Email</string>
+</resources>
