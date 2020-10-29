@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MentHelApp</string>
+    <string name="app_name">MentApp</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="f_name">First Name</string>

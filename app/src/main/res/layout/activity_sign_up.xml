@@ -7,9 +7,6 @@
     tools:context=".SignUpActivity">
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,20 +15,31 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/White">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center|center_horizontal|center_vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal|center_vertical"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginRight="20dp"
-                    android:background="#FFFFFF"
+                    android:background="@color/White"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center_vertical|center|center_horizontal"
+                        tools:srcCompat="@tools:sample/avatars" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/f_nameInputLayout"
@@ -39,17 +47,20 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/f_name"
                         android:padding="10dp"
-                        app:endIconMode="clear_text"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:boxStrokeColor="@color/LightMaroon">
+                        app:boxStrokeColor="@color/White"
+                        app:endIconMode="clear_text">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/clientFirstName"
-                            android:layout_width="229dp"
+                            android:layout_width="320dp"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/White"
+                            android:textColorHighlight="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -60,17 +71,18 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/l_name"
                         android:padding="10dp"
-                        app:endIconMode="clear_text"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:boxStrokeColor="@color/LightMaroon">
+                        app:boxStrokeColor="@color/White"
+                        app:endIconMode="clear_text">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/clientLastName"
-                            android:layout_width="229dp"
+                            android:layout_width="320dp"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -81,41 +93,42 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/username"
                         android:padding="10dp"
-                        app:endIconMode="clear_text"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:boxStrokeColor="@color/LightMaroon">
+                        app:boxStrokeColor="@color/White"
+                        app:endIconMode="clear_text">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/clientUsername"
-                            android:layout_width="229dp"
+                            android:layout_width="320dp"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-<!--                    <com.google.android.material.textfield.TextInputLayout-->
-<!--                        android:id="@+id/phoneInputLayout"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:hint="@string/phone_number"-->
-<!--                        android:padding="10dp"-->
-<!--                        app:endIconMode="clear_text"-->
-<!--                        app:boxCornerRadiusBottomEnd="10dp"-->
-<!--                        app:boxCornerRadiusBottomStart="10dp"-->
-<!--                        app:boxCornerRadiusTopEnd="10dp"-->
-<!--                        app:boxCornerRadiusTopStart="10dp"-->
-<!--                        app:boxStrokeColor="@color/LightMaroon">-->
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/phoneInputLayout"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:hint="@string/phone_number"-->
+                    <!--                        android:padding="10dp"-->
+                    <!--                        app:endIconMode="clear_text"-->
+                    <!--                        app:boxCornerRadiusBottomEnd="10dp"-->
+                    <!--                        app:boxCornerRadiusBottomStart="10dp"-->
+                    <!--                        app:boxCornerRadiusTopEnd="10dp"-->
+                    <!--                        app:boxCornerRadiusTopStart="10dp"-->
+                    <!--                        app:boxStrokeColor="@color/LightMaroon">-->
 
-<!--                        <com.google.android.material.textfield.TextInputEditText-->
-<!--                            android:id="@+id/clientPhoneNumber"-->
-<!--                            android:layout_width="229dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            tools:layout_editor_absoluteX="33dp"-->
-<!--                            tools:layout_editor_absoluteY="1162dp" />-->
-<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+                    <!--                        <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                            android:id="@+id/clientPhoneNumber"-->
+                    <!--                            android:layout_width="229dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            tools:layout_editor_absoluteX="33dp"-->
+                    <!--                            tools:layout_editor_absoluteY="1162dp" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
 
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -124,17 +137,19 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/prompt_email"
                         android:padding="10dp"
-                        app:endIconMode="clear_text"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:boxStrokeColor="@color/LightMaroon">
+                        app:boxStrokeColor="@color/White"
+                        app:endIconMode="clear_text">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/clientEmail"
-                            android:layout_width="229dp"
+                            android:layout_width="320dp"
                             android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
 
@@ -146,61 +161,63 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
+                        android:inputType="textPassword"
                         android:padding="10dp"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:boxStrokeColor="@color/LightMaroon"
+                        app:boxStrokeColor="@color/White"
                         app:boxStrokeWidth="20dp"
                         app:boxStrokeWidthFocused="10dp"
-                        app:endIconMode="password_toggle"
-                        android:inputType="textPassword">
+                        app:endIconMode="password_toggle">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/clientpassword"
-                            android:layout_width="229dp"
+                            android:layout_width="320dp"
                             android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
-                            tools:layout_editor_absoluteY="1162dp"
-                            android:inputType="textPassword"/>
+                            tools:layout_editor_absoluteY="1162dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--                    <com.google.android.material.textfield.TextInputLayout-->
-<!--                        android:id="@+id/c_passwordInputLayout"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:hint="@string/password"-->
-<!--                        android:padding="10dp"-->
-<!--                        app:boxCornerRadiusBottomEnd="10dp"-->
-<!--                        app:boxCornerRadiusBottomStart="10dp"-->
-<!--                        app:boxCornerRadiusTopEnd="10dp"-->
-<!--                        app:boxCornerRadiusTopStart="10dp"-->
-<!--                        app:boxStrokeColor="@color/LightMaroon"-->
-<!--                        app:boxStrokeWidth="20dp"-->
-<!--                        app:boxStrokeWidthFocused="10dp"-->
-<!--                        app:endIconMode="password_toggle"-->
-<!--                        android:inputType="textPassword">-->
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/c_passwordInputLayout"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:hint="@string/password"-->
+                    <!--                        android:padding="10dp"-->
+                    <!--                        app:boxCornerRadiusBottomEnd="10dp"-->
+                    <!--                        app:boxCornerRadiusBottomStart="10dp"-->
+                    <!--                        app:boxCornerRadiusTopEnd="10dp"-->
+                    <!--                        app:boxCornerRadiusTopStart="10dp"-->
+                    <!--                        app:boxStrokeColor="@color/LightMaroon"-->
+                    <!--                        app:boxStrokeWidth="20dp"-->
+                    <!--                        app:boxStrokeWidthFocused="10dp"-->
+                    <!--                        app:endIconMode="password_toggle"-->
+                    <!--                        android:inputType="textPassword">-->
 
-<!--                        <com.google.android.material.textfield.TextInputEditText-->
-<!--                            android:id="@+id/clientCPassword"-->
-<!--                            android:layout_width="229dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            tools:layout_editor_absoluteX="33dp"-->
-<!--                            tools:layout_editor_absoluteY="1162dp"-->
-<!--                            android:inputType="textPassword"/>-->
+                    <!--                        <com.google.android.material.textfield.TextInputEditText-->
+                    <!--                            android:id="@+id/clientCPassword"-->
+                    <!--                            android:layout_width="229dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            tools:layout_editor_absoluteX="33dp"-->
+                    <!--                            tools:layout_editor_absoluteY="1162dp"-->
+                    <!--                            android:inputType="textPassword"/>-->
 
-<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
 
                     <Button
                         android:id="@+id/signUpBtn"
                         android:layout_width="@dimen/textWidth"
                         android:layout_height="@dimen/textHeight"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="50dp"
                         android:background="@drawable/button_bg_rounded_corners"
                         android:text="Sign Up"
-                        android:layout_marginBottom="50dp"
                         android:textColor="@color/TextColor" />
 
 

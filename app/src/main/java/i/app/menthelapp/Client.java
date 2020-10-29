@@ -22,6 +22,9 @@ public class Client {
         this.clientPassword = clientPassword;
     }
 
+    public Client(String email, String password) {
+    }
+
     public String getClientFName() {
         return clientFName;
     }
