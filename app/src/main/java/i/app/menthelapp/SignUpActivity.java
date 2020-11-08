@@ -3,6 +3,7 @@ package i.app.menthelapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -96,6 +97,10 @@ public class SignUpActivity extends AppCompatActivity {
                                         String id = databaseClient.push().getKey();
                                         Client client = new Client(clientFname, clientLname, clientUname, email, password);
                                         databaseClient.child(id).setValue(client);
+                                        Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_LONG).show();
+                                        Intent i = new Intent(SignUpActivity.this, SignInActivity.class);
+                                        startActivity(i);
+
                                         //updateUI(null);
                                     } else {
                                         // If sign in fails, display a message to the user.

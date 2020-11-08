@@ -58,9 +58,6 @@
                             android:id="@+id/clientFirstName"
                             android:layout_width="320dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/White"
-                            android:textColorHighlight="#FFFFFF"
-                            android:textColorHint="#FFFFFF"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -82,7 +79,6 @@
                             android:id="@+id/clientLastName"
                             android:layout_width="320dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +100,6 @@
                             android:id="@+id/clientUsername"
                             android:layout_width="320dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -149,7 +144,6 @@
                             android:layout_width="320dp"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
-                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
 
@@ -177,38 +171,11 @@
                             android:layout_width="320dp"
                             android:layout_height="wrap_content"
                             android:inputType="textPassword"
-                            android:textColor="@color/White"
                             tools:layout_editor_absoluteX="33dp"
                             tools:layout_editor_absoluteY="1162dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-
-                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
-                    <!--                        android:id="@+id/c_passwordInputLayout"-->
-                    <!--                        android:layout_width="wrap_content"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:hint="@string/password"-->
-                    <!--                        android:padding="10dp"-->
-                    <!--                        app:boxCornerRadiusBottomEnd="10dp"-->
-                    <!--                        app:boxCornerRadiusBottomStart="10dp"-->
-                    <!--                        app:boxCornerRadiusTopEnd="10dp"-->
-                    <!--                        app:boxCornerRadiusTopStart="10dp"-->
-                    <!--                        app:boxStrokeColor="@color/LightMaroon"-->
-                    <!--                        app:boxStrokeWidth="20dp"-->
-                    <!--                        app:boxStrokeWidthFocused="10dp"-->
-                    <!--                        app:endIconMode="password_toggle"-->
-                    <!--                        android:inputType="textPassword">-->
-
-                    <!--                        <com.google.android.material.textfield.TextInputEditText-->
-                    <!--                            android:id="@+id/clientCPassword"-->
-                    <!--                            android:layout_width="229dp"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            tools:layout_editor_absoluteX="33dp"-->
-                    <!--                            tools:layout_editor_absoluteY="1162dp"-->
-                    <!--                            android:inputType="textPassword"/>-->
-
-                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
 
                     <Button
                         android:id="@+id/signUpBtn"

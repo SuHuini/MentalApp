@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
     tools:context=".SignInActivity">
 
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -31,47 +32,67 @@
             android:text="Welcome :)"
             android:textSize="18sp" />
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginNameLayout"
+            android:id="@+id/emailInputLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
+            android:hint="@string/prompt_email"
             android:padding="10dp"
-            app:endIconMode="clear_text"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/LightMaroon">
+            app:boxStrokeColor="@color/White"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/loginName"
-                android:layout_width="match_parent"
+                android:id="@+id/signInEmail"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="1162dp" />
+
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginPasswordLayout"
+            android:id="@+id/n_passwordInputLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:padding="10dp"
-            app:endIconMode="clear_text"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/LightMaroon">
+            app:boxStrokeColor="@color/White"
+            app:boxStrokeWidth="20dp"
+            app:boxStrokeWidthFocused="10dp"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/loginPassword"
-                android:layout_width="match_parent"
+                android:id="@+id/signInpassword"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:inputType="textPassword"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="1162dp" />
+
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/signInBtn"
+            android:layout_width="@dimen/textWidth"
+            android:layout_height="@dimen/textHeight"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Sign In"
+            android:textColor="@color/TextColor" />
 
         <TextView
             android:id="@+id/signUpText"
@@ -80,6 +101,7 @@
             android:onClick="signUp"
             android:text="No account? Sign up"
             android:textColor="@color/Blue" />
+
 
     </LinearLayout>
 
