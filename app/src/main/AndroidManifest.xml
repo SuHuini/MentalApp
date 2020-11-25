@@ -9,7 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserActivity"></activity>
+        <activity
+            android:name=".AdminsView"
+            android:label="@string/title_activity_admins_view"
+            android:parentActivityName=".AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="i.app.menthelapp.AdminActivity" />
+        </activity>
+        <activity android:name=".AdminRegisterActivity" />
+        <activity
+            android:name=".CounsellorView"
+            android:label="@string/title_activity_counsellor_view"
+            android:parentActivityName=".AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="i.app.menthelapp.AdminActivity" />
+        </activity>
+        <activity android:name=".AdminActivity" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:parentActivityName=".UserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="i.app.menthelapp.UserActivity" />
+        </activity>
+        <activity android:name=".CounsellorRegisterActivity" />
+        <activity android:name=".UserActivity" />
         <activity android:name=".MatchActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />

@@ -27,5 +27,13 @@
     <string name="Bookings">Bookings</string>
     <string name="Settings">Settings</string>
 
+    <string name="no_preference">No Preference</string>
+    <string name="gender">Gender</string>
+    <string name="faith">Faith</string>
+    <string name="issue">Issue</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_activity_counsellor_view">CounsellorView</string>
+    <string name="title_activity_admins_view">AdminsView</string>
+
 
 </resources>
