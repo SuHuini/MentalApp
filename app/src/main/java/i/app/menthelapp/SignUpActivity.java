@@ -41,7 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference databaseClient;
     private FirebaseAuth mAuth;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore db= FirebaseFirestore.getInstance();
 
     @Override
     public void onStart() {

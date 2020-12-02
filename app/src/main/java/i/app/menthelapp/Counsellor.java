@@ -6,19 +6,22 @@ public class Counsellor {
     String counSName;
     String counEmail;
     String counPassword;
-    int licenseNo;
+    String licenseNo;
     String specialization;
 
     public Counsellor(){
 
     }
-    public Counsellor( String counFName, String counSName, String counEmail,  String counPassword, int licenseNo,  String specialization) {
+    public Counsellor( String counFName, String counSName, String counEmail,  String counPassword, String licenseNo,  String specialization) {
         this.counFName = counFName;
         this.counSName = counSName;
         this.counEmail = counEmail;
         this.counPassword = counPassword;
         this.licenseNo = licenseNo;
         this.specialization = specialization;
+    }
+    public Counsellor( String counFName, String counSName,  String licenseNo,  String specialization) {
+
     }
 
     public String getCounFName() {
@@ -53,11 +56,11 @@ public class Counsellor {
         this.counPassword = counPassword;
     }
 
-    public int getLicenseNo() {
+    public String getLicenseNo() {
         return licenseNo;
     }
 
-    public void setLicenseNo(int licenseNo) {
+    public void setLicenseNo(String licenseNo) {
         this.licenseNo = licenseNo;
     }
 

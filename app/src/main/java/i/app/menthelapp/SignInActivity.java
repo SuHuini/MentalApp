@@ -70,8 +70,6 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authresult) {
                         Log.d(TAG, "signInWithEmail:success");
-
-
                         //AuthResult authResult;
                         FirebaseUser user = mAuth.getInstance().getCurrentUser();
                         checkUserAccessLevel(authresult.getUser().getUid());

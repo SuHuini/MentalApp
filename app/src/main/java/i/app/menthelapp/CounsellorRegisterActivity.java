@@ -39,7 +39,7 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference databaseCoun;
     private FirebaseAuth mAuth;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore fStore= FirebaseFirestore.getInstance();
 
     @Override
     public void onStart() {
@@ -52,16 +52,16 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_coun_register);
         mAuth = FirebaseAuth.getInstance();
 
         //databaseCoun = FirebaseDatabase.getInstance().getReference("client");
-        fname =  (TextInputEditText)findViewById(R.id.clientFirstName);
-        lname = (TextInputEditText) findViewById(R.id.clientLastName);
-        license =  (TextInputEditText)findViewById(R.id.clientUsername);
+        fname =  (TextInputEditText)findViewById(R.id.adminFirstName);
+        lname = (TextInputEditText) findViewById(R.id.adminLastName);
+        license =  (TextInputEditText)findViewById(R.id.license);
 //        phone = (EditText) findViewById(R.id.clientPhoneNumber);
-        emailcoun = (TextInputEditText) findViewById(R.id.clientEmail);
-        passcoun= (TextInputEditText) findViewById(R.id.clientpassword);
+        emailcoun = (TextInputEditText) findViewById(R.id.adminEmail);
+        passcoun= (TextInputEditText) findViewById(R.id.adminPass);
 
         grief = (CheckBox) findViewById(R.id.grief);
         anxiety = (CheckBox) findViewById(R.id.anxiety);
@@ -73,10 +73,9 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
 
         signUpButton = (Button) findViewById(R.id.signUpBtn);
 
-
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();
+                //rootNode = FirebaseDatabase.getInstance();
                 //databaseClient = rootNode.getReference("client");
                 //addClient();
                 //Get all the values
@@ -85,6 +84,7 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                 final String counLicense = license.getText().toString();
                 final String email = emailcoun.getText().toString();
                 final String password = passcoun.getText().toString();
+
 
                 //check if all fields are filled
                 if (TextUtils.isEmpty(counFname) || TextUtils.isEmpty(counLname) || TextUtils.isEmpty(counLicense) ||
@@ -103,29 +103,49 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d(TAG, "createUserWithEmail:success");
-                                        String id = databaseCoun.push().getKey();
+                                        //String id = databaseCoun.push().getKey();
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Toast.makeText(CounsellorRegisterActivity.this, "Registration successful", Toast.LENGTH_LONG).show();
-                                        DocumentReference df = db.collection("Users").document(user.getUid());
+                                        DocumentReference dr = fStore.collection("Users").document(user.getUid());
                                         Map<String, Object> userInfo = new HashMap<>();
-                                        userInfo.put("First Name", fname.getText().toString());
-                                        userInfo.put("Last Name", lname.getText().toString());
-                                        userInfo.put("License No", license.getText().toString());
-                                        userInfo.put("Email", emailcoun.getText().toString());
-                                        userInfo.put("Password", passcoun.getText().toString());
+                                        userInfo.put("counFName",fname.getText().toString());
+                                        userInfo.put("counSName", lname.getText().toString());
+                                        userInfo.put("licenseNo", license.getText().toString());
+                                        userInfo.put("counEmail", emailcoun.getText().toString());
+                                        userInfo.put("counPassword", passcoun.getText().toString());
                                         userInfo.put("IsCounsellor", "1");
 
-                                        df.set(userInfo);
+                                        //userInfo.put("Specializations", "General");
+                                        if(grief.isChecked()){
+                                            userInfo.put("specialization", "Grief");
+                                        }
+                                        if(anxiety.isChecked()){
+                                            userInfo.put("specialization", "Anxiety");
+                                        }
+                                        if(trauma.isChecked()){
 
-                                        Intent i = new Intent(CounsellorRegisterActivity.this, MatchActivity.class);
+                                            userInfo.put("specialization", "Trauma");
+                                        }
+                                        if(insomnia.isChecked()){
+                                            userInfo.put("specialization", "Insomnia");
+                                        }
+                                        if(general.isChecked()){
+                                            userInfo.put("specialization", "General");
+                                        }
+
+
+                                        dr.set(userInfo);
+
+                                        Intent i = new Intent(CounsellorRegisterActivity.this, CounsellorView.class);
                                         startActivity(i);
                                         finish();
                                         //updateUI(null);
+
                                     } else {
                                         // If sign in fails, display a message to the user.
 
                                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(CounsellorRegisterActivity.this, "Authentication failed.",
+                                        Toast.makeText(CounsellorRegisterActivity.this, "Registration failed.",
                                                 Toast.LENGTH_SHORT).show();
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         //updateUI(user);
@@ -137,5 +157,25 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void onCheckboxClicked(View view){
+        StringBuffer specialization = new StringBuffer();
+        specialization.append("Specializations:");
+        if(grief.isChecked()){
+            specialization.append(grief.getText().toString());
+        }
+        if(anxiety.isChecked()){
+            specialization.append(anxiety.getText().toString());
+        }
+        if(trauma.isChecked()){
+            specialization.append(trauma.getText().toString());
+        }
+        if(insomnia.isChecked()){
+            specialization.append(insomnia.getText().toString());
+        }
+        if(general.isChecked()){
+            specialization.append(general.getText().toString());
+        }
     }
 }
