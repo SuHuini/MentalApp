@@ -111,6 +111,8 @@ public class SignUpActivity extends AppCompatActivity {
                                         userInfo.put("User Name", uname.getText().toString());
                                         userInfo.put("Email", emailclient.getText().toString());
                                         userInfo.put("Password", passclient.getText().toString());
+                                        userInfo.put("counName", " ");
+                                        userInfo.put("counEmail", "");
 
                                         userInfo.put("IsUser", "1");
 

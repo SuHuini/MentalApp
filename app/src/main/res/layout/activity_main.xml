@@ -70,7 +70,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="50dp"
                         android:background="@drawable/button_bg_rounded_corners"
-                        android:text="CLIENT"
+                        android:text="LOGIN"
                         android:onClick="login"
                         android:textColor="@color/TextColor" />
 

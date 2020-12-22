@@ -1,7 +1,9 @@
 package i.app.menthelapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +21,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class UserActivity extends AppCompatActivity {
     private static final String TAG = "UserName";
@@ -27,42 +34,71 @@ public class UserActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String uid;
 
+    TextView uname, uemail;
+    CardView sess;
     Button logOut;
+
+    private  FirebaseAuth mAuth;
+    private FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        sess = findViewById(R.id.sessionsView);
+
         logOut = findViewById(R.id.button);
+
+        uname = findViewById(R.id.user_name);
+        uemail = findViewById(R.id.user_email);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
-        uid = user.getUid();
+        mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        uid = mAuth.getCurrentUser().getUid();
+        FirebaseUser user = mAuth.getCurrentUser();
 
-        final TextView name = (TextView) findViewById(R.id.textView);
-        //loadUserInformation();
 
-        logOut.setOnClickListener(new View.OnClickListener() {
+        DocumentReference doc = fStore.collection("Users").document(user.getUid());
+        doc.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                uname.setText(value.getString("User Name"));
+                uemail.setText("Counsellor:" + value.getString("counName"));
+                Log.d(TAG, "Retrieved!!!");
+            }
+        });
+
+
+             logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
+                //mAuth.getInstance().signOut();
                 startActivity( new Intent(getApplicationContext(), SignInActivity.class));
             }
         });
 
-        reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Client client = snapshot.getValue(Client.class);
+             sess.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     startActivity( new Intent(getApplicationContext(), SessionActivity.class));
+                 }
+             });
 
-                if (client != null){
-
-                    String username = client.clientUName;
-
-                    name.setText(username);
-                }
-            }
+//        reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Client client = snapshot.getValue(Client.class);
+//
+//                if (client != null){
+//
+//                    String username = client.clientUName;
+//
+//                    name.setText(username);
+//                }
+//            }
 
 //            protected void onStart(){
 //                super.onStart();
@@ -75,12 +111,12 @@ public class UserActivity extends AppCompatActivity {
 //                }
 
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d(TAG, "get user failed");
-                Toast.makeText(UserActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
-            }
-        });
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d(TAG, "get user failed");
+//                Toast.makeText(UserActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+//            }
+//        });
 
     }
 }

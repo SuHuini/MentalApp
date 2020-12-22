@@ -138,7 +138,9 @@
                 android:id="@+id/adminBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="REGISTER"
+                android:textColor="@color/TextColor"
+                android:background="@drawable/button_bg_rounded_corners"/>
         </LinearLayout>
     </LinearLayout>
     </ScrollView>

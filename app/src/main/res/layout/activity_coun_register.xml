@@ -191,7 +191,7 @@
                             android:id="@+id/trauma"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="trauma"
+                            android:text="Trauma"
                             android:onClick="onCheckboxClicked"/>
 
                         <CheckBox

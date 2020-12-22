@@ -22,27 +22,42 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
-             <RelativeLayout
-                 android:layout_width="379dp"
+             <LinearLayout
+                 android:layout_width="match_parent"
                  android:layout_height="match_parent"
-                 android:padding="8dp">
+                 android:orientation="vertical">
+
+                 <LinearLayout
+                     android:layout_width="379dp"
+                     android:layout_height="wrap_content"
+                     android:padding="8dp">
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:padding="15dp"
+                         android:text="Welcome"
+                         android:textColor="@color/colorPrimaryDark"
+                         android:textSize="18dp" />
+
+                     <TextView
+                         android:id="@+id/user_name"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textColor="@color/colorPrimaryDark"
+                         android:textSize="18dp" />
+
+                 </LinearLayout>
 
                  <TextView
+                     android:id="@+id/user_email"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Welcome"
+                     android:padding="15dp"
                      android:textColor="@color/colorPrimaryDark"
                      android:textSize="18dp" />
 
-                 <!--                <ImageView-->
-                 <!--                    android:id="@+id/signout"-->
-                 <!--                    android:layout_width="wrap_content"-->
-                 <!--                    android:layout_height="80dp"-->
-                 <!--                    android:layout_alignParentRight="true"-->
-                 <!--                    android:layout_alignParentBottom="true"-->
-                 <!--                    android:src="@drawable/signout" />-->
-
-             </RelativeLayout>
+             </LinearLayout>
 
          </androidx.cardview.widget.CardView>
 
@@ -180,12 +195,12 @@
                     android:layout_height="match_parent"
                     android:padding="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Payments"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18dp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Payments"-->
+<!--                        android:textColor="@color/colorPrimaryDark"-->
+<!--                        android:textSize="18dp" />-->
 
 <!--                    <ImageView-->
 <!--                        android:id="@+id/signout"-->
@@ -203,6 +218,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOG OUT" />
+            android:text="LOG OUT"
+            android:textColor="@color/TextColor"
+            android:background="@drawable/button_bg_rounded_corners"/>
     </LinearLayout>
 </LinearLayout>

@@ -17,10 +17,12 @@
             android:layout_height="88dp"
             android:gravity="center|center_vertical"
             android:text="Help us find you a counsellor"
-            android:textColor="@color/colorPrimaryDark"></TextView>
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"></TextView>
 
         <LinearLayout
-            android:layout_width="@dimen/radio_width"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -29,60 +31,106 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/issue"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"
+                android:padding="10dp"/>
 
             <RadioGroup
-                android:id="@+id/issue"
-                android:layout_width="match_parent"
+                android:id="@+id/rg_issue"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
                 <RadioButton
-                    android:id="@+id/grief"
+                    android:id="@+id/radio_grief"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:shadowColor="#2B2B2B"
                     android:text="Grief"
                     android:textColor="@color/colorAccent" />
 
                 <RadioButton
-                    android:id="@+id/trauma"
+                    android:id="@+id/radio_trauma"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:shadowColor="#461B9B"
                     android:text="Trauma"
                     android:textColor="@color/colorAccent" />
 
                 <RadioButton
-                    android:id="@+id/anxiety"
+                    android:id="@+id/radio_anxiety"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:shadowColor="#461B9B"
                     android:text="Anxiety"
                     android:textColor="@color/colorAccent" />
 
                 <RadioButton
-                    android:id="@+id/general"
+                    android:id="@+id/radio_general"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:shadowColor="#461B9B"
                     android:text="General"
                     android:textColor="@color/colorAccent" />
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/issueText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Button
+                android:id="@+id/set_issue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:padding="10dp"
+                android:text="ISSUE"
+                android:textColor="@color/TextColor" />
+
         </LinearLayout>
 
-
-        <TextView
-            android:id="@+id/issueText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
 
         <Button
             android:id="@+id/nextBtn"
             android:layout_width="@dimen/textWidth"
             android:layout_height="@dimen/textHeight"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="50dp"
             android:background="@drawable/button_bg_rounded_corners"
-            android:text="Next"
+            android:text="Get Counsellor"
             android:textColor="@color/TextColor" />
+
+        <LinearLayout
+            android:id="@+id/counDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/match_counName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/match_counEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Button
+                android:id="@+id/session_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:padding="10dp"
+                android:text="set up session"
+                android:textColor="@color/TextColor" />
+        </LinearLayout>
 
     </LinearLayout>
 

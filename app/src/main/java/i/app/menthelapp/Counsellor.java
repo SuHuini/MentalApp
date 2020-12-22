@@ -24,6 +24,10 @@ public class Counsellor {
 
     }
 
+    public Counsellor( String counFName, String counSName,  String counEmail) {
+
+
+    }
     public String getCounFName() {
         return counFName;
     }

@@ -113,9 +113,6 @@ public class CounsellorView extends AppCompatActivity {
             license = itemView.findViewById(R.id.userInfo1);
             specialization = itemView.findViewById(R.id.userInfo2);
 
-
-
-
             db.collection("Users")
                     .whereEqualTo("IsCounsellor","1" )
                     .get()
@@ -132,7 +129,7 @@ public class CounsellorView extends AppCompatActivity {
                                     String license = coun.getLicenseNo();
                                     String specialization  = coun.getSpecialization();
                                     String data = "Name: " + fname + lname
-                                            + "\nTitle: " + license + "\n Description: " + specialization+ "\n\n";
+                                            + "\nLicense: " + license + "\n Specialization: " + specialization+ "\n\n";
                                     //coun = document.getData();
 
                                     Log.d(TAG, document.getId() + " => " + document.getData());
