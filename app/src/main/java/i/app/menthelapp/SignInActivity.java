@@ -65,7 +65,8 @@ public class SignInActivity extends AppCompatActivity {
 
                 final String email = emailSignIn.getText().toString();
                 final String password = passSignIn.getText().toString();
-                mAuth.signInWithEmailAndPassword(emailSignIn.getText().toString(), passSignIn.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                mAuth.signInWithEmailAndPassword(emailSignIn.getText().toString(), passSignIn.getText().toString())
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
 
                     @Override
                     public void onSuccess(AuthResult authresult) {

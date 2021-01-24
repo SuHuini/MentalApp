@@ -27,6 +27,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import i.app.menthelapp.chat.ChatActivity;
+
 public class UserActivity extends AppCompatActivity {
     private static final String TAG = "UserName";
 
@@ -72,21 +74,28 @@ public class UserActivity extends AppCompatActivity {
         });
 
 
-             logOut.setOnClickListener(new View.OnClickListener() {
+        logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //mAuth.getInstance().signOut();
-                startActivity( new Intent(getApplicationContext(), SignInActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             }
         });
 
-             sess.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                     startActivity( new Intent(getApplicationContext(), SessionActivity.class));
-                 }
-             });
+        sess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SessionViewActivity.class));
+            }
+        });
 
+
+    }
+             public void chatMess(View v){
+            Intent i = new Intent(UserActivity.this, ChatActivity.class);
+            startActivity(i);
+
+        }
 //        reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -118,5 +127,5 @@ public class UserActivity extends AppCompatActivity {
 //            }
 //        });
 
-    }
+
 }

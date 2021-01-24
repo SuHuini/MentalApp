@@ -90,7 +90,10 @@ public class SignUpActivity extends AppCompatActivity {
                 else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     Toast.makeText(SignUpActivity.this, "Valid email required", Toast.LENGTH_LONG).show();
                 }
-                else {
+                else if (password.length() < 6) {
+                    Toast.makeText(SignUpActivity.this, "Password should have more than 6 digits", Toast.LENGTH_LONG).show();
+                }
+                else {                    
                     //register user
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {

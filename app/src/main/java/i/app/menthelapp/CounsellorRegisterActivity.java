@@ -15,6 +15,8 @@ import android.widget.Checkable;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
@@ -31,7 +33,7 @@ import java.util.Map;
 public class CounsellorRegisterActivity extends AppCompatActivity {
     TextInputEditText fname, lname, license, emailcoun, passcoun;
     Button signUpButton;
-    CheckBox grief, anxiety, general, trauma, insomnia;
+    CheckBox depression, anxiety, general;
     //ImageView img;
 
     private static final String TAG = "EmailPassword";
@@ -63,11 +65,10 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
         emailcoun = (TextInputEditText) findViewById(R.id.adminEmail);
         passcoun= (TextInputEditText) findViewById(R.id.adminPass);
 
-        grief = (CheckBox) findViewById(R.id.grief);
+        depression = (CheckBox) findViewById(R.id.depression);
         anxiety = (CheckBox) findViewById(R.id.anxiety);
         general = (CheckBox) findViewById(R.id.general);
-        insomnia = (CheckBox) findViewById(R.id.insomnia);
-        trauma = (CheckBox) findViewById(R.id.trauma);
+
 
         //img = (ImageView) findViewById(R.id.imageView);
 
@@ -84,7 +85,7 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                 final String counLicense = license.getText().toString();
                 final String email = emailcoun.getText().toString();
                 final String password = passcoun.getText().toString();
-
+               //String specialization;
 
                 //check if all fields are filled
                 if (TextUtils.isEmpty(counFname) || TextUtils.isEmpty(counLname) || TextUtils.isEmpty(counLicense) ||
@@ -115,26 +116,20 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                                         userInfo.put("counPassword", passcoun.getText().toString());
                                         userInfo.put("IsCounsellor", "1");
 
-                                        //userInfo.put("Specializations", "General");
-                                        if(grief.isChecked()){
-                                            userInfo.put("specialization", "Grief");
+                                        if(depression.isChecked()){
+                                            userInfo.put("specialization", "Depression");
                                         }
                                         if(anxiety.isChecked()){
                                             userInfo.put("specialization", "Anxiety");
                                         }
-                                        if(trauma.isChecked()){
-
-                                            userInfo.put("specialization", "Trauma");
-                                        }
-                                        if(insomnia.isChecked()){
-                                            userInfo.put("specialization", "Insomnia");
-                                        }
                                         if(general.isChecked()){
                                             userInfo.put("specialization", "General");
                                         }
-
-
                                         dr.set(userInfo);
+
+                                        //String name = counFname + "" + counLname;
+                                        //writeSpecialization(name, email, specialization);
+
 
                                         Intent i = new Intent(CounsellorRegisterActivity.this, CounsellorView.class);
                                         startActivity(i);
@@ -158,24 +153,66 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
             }
         });
     }
+    private void writeSpecialization(String name, String email, String specialization) {
+        //final String userId;
+//        final String name = uname.getText().toString();
+//        final String email = uemail.getText().toString();
+//        final String password = pass.getText().toString();
+        FirebaseUser user = mAuth.getCurrentUser();
+        //DocumentReference df = db.collection("chatUsers").document(user.getUid());
+        String userId = user.getUid();
+        Map<String, Object> userInfo = new HashMap<>();
+        userInfo.put("id", userId);
+        userInfo.put("name", name);
+        userInfo.put("email", email);
+        //userInfo.put("password", password);
+        userInfo.put("imageUrl", "default");
 
-    public void onCheckboxClicked(View view){
-        StringBuffer specialization = new StringBuffer();
-        specialization.append("Specializations:");
-        if(grief.isChecked()){
-            specialization.append(grief.getText().toString());
-        }
-        if(anxiety.isChecked()){
-            specialization.append(anxiety.getText().toString());
-        }
-        if(trauma.isChecked()){
-            specialization.append(trauma.getText().toString());
-        }
-        if(insomnia.isChecked()){
-            specialization.append(insomnia.getText().toString());
-        }
-        if(general.isChecked()){
-            specialization.append(general.getText().toString());
-        }
+        //userInfo.put("IsUser", "1");
+        fStore.collection("chatUsers").document(specialization)
+                .collection(email)
+                .add(userInfo)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID" + documentReference.getId());
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document");
+                    }
+                });
+
+
+
+        Log.d(TAG, "saveuserdata");
+
     }
+
+//public void onCheckboxClicked(View view){
+//    String spec = null;
+//    View view= null;
+//    switch (view.getId()){
+//        case R.id.depression:
+//            spec = "depression";
+//            break;
+//        case anxiety.isChecked():
+//            spec = "anxiety";
+//            break;
+//        case general.isChecked():
+//            spec = "general";
+//            break;
+//        case R.id.radio_general:
+//            spec = "drug abuse";
+//            break;
+//
+//        default:
+//            Toast.makeText(getBaseContext(),
+//                    "Click a RadioButton", Toast.LENGTH_SHORT).show();
+//            break;
+//    }
+//}
 }

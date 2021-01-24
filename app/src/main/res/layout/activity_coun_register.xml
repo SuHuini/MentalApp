@@ -14,12 +14,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/BackgroundColor"
+        app:layout_behavior= "@string/appbar_scrolling_view_behavior"
         tools:context=".SignUpActivity">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/White">
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/White">-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,10 +175,10 @@
                             android:text="Select specialization" />
 
                         <CheckBox
-                            android:id="@+id/grief"
+                            android:id="@+id/depression"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Grief"
+                            android:text="Depression"
                             android:onClick="onCheckboxClicked"/>
 
                         <CheckBox
@@ -188,29 +189,20 @@
                             android:onClick="onCheckboxClicked"/>
 
                         <CheckBox
-                            android:id="@+id/trauma"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Trauma"
-                            android:onClick="onCheckboxClicked"/>
-
-                        <CheckBox
-                            android:id="@+id/insomnia"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Insomnia"
-                            android:onClick="onCheckboxClicked"/>
-
-                        <CheckBox
                             android:id="@+id/general"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="General"
                             android:onClick="onCheckboxClicked"/>
+                        <CheckBox
+                            android:id="@+id/drug_abuse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Drug Abuse Disorders"
+                            android:onClick="onCheckboxClicked"/>
+
 
                     </LinearLayout>
-
-
                     <Button
                         android:id="@+id/signUpBtn"
                         android:layout_width="@dimen/textWidth"
@@ -224,7 +216,7 @@
 
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+<!--        </ScrollView>-->
 
     </RelativeLayout>
 

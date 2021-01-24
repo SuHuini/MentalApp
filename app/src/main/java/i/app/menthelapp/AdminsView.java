@@ -63,19 +63,20 @@ public class AdminsView extends AppCompatActivity {
                 .setQuery(query, Admin.class)
                 .build();
 
-        adapter = new FirestoreRecyclerAdapter<Admin, AdminsView.CounsellorViewHolder>(options) {
+        adapter = new FirestoreRecyclerAdapter<Admin, AdminsView.AdminsViewHolder>(options) {
             @NonNull
             @Override
-            public AdminsView.CounsellorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public AdminsView.AdminsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_user, parent, false);
-                return new AdminsView.CounsellorViewHolder(view);
+                return new AdminsView.AdminsViewHolder(view);
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull AdminsView.CounsellorViewHolder holder, int position, @NonNull Admin model) {
+            protected void onBindViewHolder(@NonNull AdminsView.AdminsViewHolder holder, int position, @NonNull Admin model) {
                 //holder.name.setText(model.getAdmin());
-                holder.license.setText(model.getAdminFName());
-                holder.specialization.setText(model.getAdminEmail());
+                holder.adminFName.setText(model.getAdminFName());
+                holder.adminSName.setText(model.getAdminSName());
+                holder.adminEmail.setText(model.getAdminEmail());
                 Log.d(TAG, "onBindViewHolderExecuted!!!");
 
             }
@@ -85,19 +86,18 @@ public class AdminsView extends AppCompatActivity {
         rec.setAdapter(adapter);
     }
 
-    private class CounsellorViewHolder extends RecyclerView.ViewHolder{
-        //private TextView name;
-        private TextView license;
-        private TextView specialization;
+    private class AdminsViewHolder extends RecyclerView.ViewHolder{
+        private TextView name;
+        private TextView adminFName;
+        private TextView adminEmail;
+        private TextView adminSName;
 
-        public CounsellorViewHolder(@NonNull View itemView) {
+        public AdminsViewHolder(@NonNull View itemView) {
             super(itemView);
             //name = itemView.findViewById(R.id.userName);
-            license = itemView.findViewById(R.id.userInfo1);
-            specialization = itemView.findViewById(R.id.userInfo2);
-
-
-
+            adminSName = itemView.findViewById(R.id.userName);
+            adminFName = itemView.findViewById(R.id.userInfo1);
+            adminEmail = itemView.findViewById(R.id.userInfo2);
 
             db.collection("Users")
                     .whereEqualTo("IsAdmin","1" )
@@ -110,13 +110,13 @@ public class AdminsView extends AppCompatActivity {
 
                                     Admin admin = document.toObject(Admin.class);
                                     //admin.setDocumentId(documentSnapshot.getId());
-                                    String id = document.getId();
+                                   // String id = document.getId();
                                     String fname = admin.getAdminFName();
                                     String lname = admin.getAdminSName();
-                                    String license = admin.getAdminEmail();
+                                    String email = admin.getAdminEmail();
                                     //String specialization  = coun.getSpecialization();
-                                    String data = id + "Name: " + fname + lname
-                                            + "\nTitle: " + license + "\n Description:\n\n";
+                                    String data = "Name: " + fname + lname
+                                            + "\nTitle: " + email + "\n Description:\n\n";
                                     //coun = document.getData();
 
                                     Log.d(TAG, document.getId() + " => " + document.getData());

@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SessionActivity"></activity>
+        <activity android:name=".SessionViewActivity"></activity>
+        <activity
+            android:name=".chat.ChatActivity"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SessionActivity" />
         <activity
             android:name=".AdminsView"
             android:label="@string/title_activity_admins_view"

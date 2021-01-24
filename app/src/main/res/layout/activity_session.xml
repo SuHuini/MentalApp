@@ -46,16 +46,29 @@
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="50dp"-->
 <!--            android:text="Set time" />-->
-
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/counname"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="Counsellor"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="Counsellor"
+            />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/date_time"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Set date"
+            android:hint="Set date"
             android:padding="15dp"/>
 
         <Button
-            android:id="@+id/session_activity"
+            android:id="@+id/save_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"

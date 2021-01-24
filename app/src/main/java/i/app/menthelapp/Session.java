@@ -3,21 +3,19 @@ package i.app.menthelapp;
 import java.util.Date;
 
 public class Session {
-
-
-
     String id;
     String clientName;
     String counName;
-    Date date;
+    String date;
     String clientEmail;
     String counEmail;
 
-    public Session(String clientName, String counName, Date date) {
-        this.clientName = clientName;
-        this.counName = counName;
-        this.date = date;
-    public Session(String id, String clientName, String counName, Date date, String clientEmail, String counEmail) {
+    public Session() {
+    }
+
+    public Session(String clientName, String counName, String date) {
+    }
+    public Session(String id, String clientName, String counName, String date, String clientEmail, String counEmail) {
         this.id = id;
         this.clientName = clientName;
         this.counName = counName;
@@ -26,10 +24,7 @@ public class Session {
         this.counEmail = counEmail;
     }
     public Session(String id, String clientName, String counName, Date date) {
-        this.id = id;
-        this.clientName = clientName;
-        this.counName = counName;
-        this.date = date;
+
     }
 
 
@@ -48,9 +43,6 @@ public class Session {
     public void setCounEmail(String counEmail) {
         this.counEmail = counEmail;
     }
-
-
-
 
     public String getId() {
         return id;
@@ -76,11 +68,11 @@ public class Session {
         this.counName = counName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

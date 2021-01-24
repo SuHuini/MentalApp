@@ -79,11 +79,7 @@ public class MatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
-
        // final FirebaseUser currentUser = mAuth.getCurrentUser();
-
-
-
         issue = (TextView) findViewById(R.id.issueText);
         rg = (RadioGroup)findViewById(R.id.rg_issue);
         anxiety =(RadioButton) findViewById(R.id.radio_anxiety);
@@ -105,6 +101,7 @@ public class MatchActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         uid = mAuth.getCurrentUser().getUid();
         FirebaseUser user = mAuth.getCurrentUser();
+        String issueU;
 
 
         anxiety.isChecked();
@@ -176,10 +173,7 @@ public class MatchActivity extends AppCompatActivity {
                                         fStore.collection("Users").document(uid)
                                                 .update("counName", nm,
                                                 "counEmail", em);
-//                                        Map<String, Object> userInfo = new HashMap<>();
-//                                        userInfo.put("counName", counName.getText().toString());
-//                                        doc.collection("Users").document(user.getUid()).set()
-                                        //doc.set(userInfo);
+
                                         Log.d(TAG, "Retrieved!!!");
                                         layout.setVisibility(View.VISIBLE);
                                         counName.setVisibility(View.VISIBLE);

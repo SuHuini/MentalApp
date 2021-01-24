@@ -90,11 +90,11 @@ public class CounsellorView extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull CounsellorViewHolder holder, int position, @NonNull Counsellor model) {
+
                 holder.name.setText(model.getCounFName());
                 holder.license.setText(model.getLicenseNo());
                 holder.specialization.setText(model.getSpecialization());
                 Log.d(TAG, "onBindViewHolderExecuted!!!");
-
             }
         };
         counRecyclerView.setHasFixedSize(true);
@@ -121,7 +121,6 @@ public class CounsellorView extends AppCompatActivity {
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
-
                                     Counsellor coun = document.toObject(Counsellor.class);
                                     //coun.setDocumentId(documentSnapshot.getId());
                                     String fname = coun.getCounFName();

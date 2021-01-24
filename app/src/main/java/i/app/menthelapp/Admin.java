@@ -8,13 +8,22 @@ public class Admin {
     String adminId;
 
 
-    public Admin(String adminFName, String adminSName, String adminEmail, String adminPass,String admminId) {
+    String adminName = adminSName + adminFName;
+
+    public Admin() {
+    }
+
+    public Admin(String adminFName, String adminSName, String adminEmail) {
+    }
+
+    public Admin(String adminFName, String adminSName, String adminEmail, String adminPass, String admminId) {
         this.adminFName = adminFName;
         this.adminSName = adminSName;
         this.adminEmail = adminEmail;
         this.adminPass = adminPass;
         this.adminId = admminId;
     }
+
 
     public String getAdminId() {
         return adminId;
@@ -54,5 +63,13 @@ public class Admin {
 
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 }
