@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sess_card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sess_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    sess_card:cardBackgroundColor="@color/colorPrimary"
+    sess_card:cardCornerRadius="10dp"
+    sess_card:contentPadding="10dp"
+    android:elevation="10dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/clientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextColor"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/counName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextColor"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextColor"
+            android:text="TextView" />
+
+        <RadioGroup
+            android:id="@+id/rg_attending"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/radio_attended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#2B2B2B"
+            android:text="Attended"
+            android:textColor="@color/TextColor"
+            android:textColorHighlight="@color/TextColor"/>
+
+        <RadioButton
+            android:id="@+id/radio_NotAttended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#461B9B"
+            android:text="Not Attended"
+            android:textColor="@color/TextColor" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_att"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="ATTEND"
+            android:background="@color/TextColor"
+            android:textColor="@color/colorPrimary"
+            android:elevation="10dp"
+            android:padding="10dp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btn_att1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Not attended"
+            android:background="@color/TextColor"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:padding="10dp"
+            android:layout_margin="10dp"/>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

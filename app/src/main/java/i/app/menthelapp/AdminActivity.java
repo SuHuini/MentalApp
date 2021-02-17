@@ -56,4 +56,8 @@ public class AdminActivity extends AppCompatActivity {
 //        }
         startActivity( new Intent(getApplicationContext(), CounsellorView.class));
     }
+    public void report(View v) {
+        startActivity( new Intent(getApplicationContext(), ReportActivity.class));
+
+    }
 }

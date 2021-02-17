@@ -10,42 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-<!--                <EditText-->
-<!--                    android:id="@+id/date_tx"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:ems="10"-->
-<!--                    android:inputType="textPersonName"-->
-<!--                    android:text="Name" />-->
-
-<!--                <EditText-->
-<!--                    android:id="@+id/time_tx"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:ems="10"-->
-<!--                    android:inputType="textPersonName"-->
-<!--                    android:text="Name" />-->
-
-<!--                <EditText-->
-<!--                    android:id="@+id/date_time_tx"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:ems="10"-->
-<!--                    android:inputType="textPersonName"-->
-<!--                    android:text="Name" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/name"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:text="Set date" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/email"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:text="Set time" />-->
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/counname"
             android:layout_height="wrap_content"
@@ -79,14 +43,5 @@
 
     </LinearLayout>
 
-<!--    <DatePicker-->
-<!--        android:id="@+id/datePicker"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <TimePicker-->
-<!--        android:id="@+id/timePicker"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"/>-->
 
 </RelativeLayout>

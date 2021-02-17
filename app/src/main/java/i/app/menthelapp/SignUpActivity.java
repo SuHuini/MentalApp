@@ -103,19 +103,21 @@ public class SignUpActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d(TAG, "createUserWithEmail:success");
                                         String id = databaseClient.push().getKey();
-//                                        Client client = new Client(clientFname, clientLname, clientUname, email, password);
+
 //                                        databaseClient.child(id).setValue(client);
                                         FirebaseUser user = mAuth.getCurrentUser();
+                                        String userid = user.getUid();
                                         Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_LONG).show();
                                         DocumentReference df = db.collection("Users").document(user.getUid());
                                         Map<String, Object> userInfo = new HashMap<>();
-                                        userInfo.put("First Name", fname.getText().toString());
-                                        userInfo.put("Last Name", lname.getText().toString());
-                                        userInfo.put("User Name", uname.getText().toString());
-                                        userInfo.put("Email", emailclient.getText().toString());
-                                        userInfo.put("Password", passclient.getText().toString());
+                                        userInfo.put("clientFName", fname.getText().toString());
+                                        userInfo.put("clientSName", lname.getText().toString());
+                                        userInfo.put("clientUName", uname.getText().toString());
+                                        userInfo.put("clientEmail", emailclient.getText().toString());
+                                        userInfo.put("clientPassword", passclient.getText().toString());
                                         userInfo.put("counName", " ");
                                         userInfo.put("counEmail", "");
+                                        userInfo.put("id", userid);
 
                                         userInfo.put("IsUser", "1");
 

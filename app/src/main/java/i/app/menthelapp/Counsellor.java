@@ -8,6 +8,7 @@ public class Counsellor {
     String counPassword;
     String licenseNo;
     String specialization;
+    String id;
 
     public Counsellor(){
 
@@ -28,6 +29,18 @@ public class Counsellor {
 
 
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+
+
     public String getCounFName() {
         return counFName;
     }

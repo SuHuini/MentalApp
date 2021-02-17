@@ -178,28 +178,24 @@
                             android:id="@+id/depression"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Depression"
-                            android:onClick="onCheckboxClicked"/>
+                            android:text="Depression"/>
 
                         <CheckBox
                             android:id="@+id/anxiety"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Anxiety"
-                            android:onClick="onCheckboxClicked"/>
+                            android:text="Anxiety"/>
 
                         <CheckBox
                             android:id="@+id/general"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="General"
-                            android:onClick="onCheckboxClicked"/>
+                            android:text="General"/>
                         <CheckBox
                             android:id="@+id/drug_abuse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Drug Abuse Disorders"
-                            android:onClick="onCheckboxClicked"/>
+                            android:text="Drug Abuse Disorders"/>
 
 
                     </LinearLayout>

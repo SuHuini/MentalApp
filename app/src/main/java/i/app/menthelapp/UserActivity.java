@@ -37,7 +37,7 @@ public class UserActivity extends AppCompatActivity {
     private String uid;
 
     TextView uname, uemail;
-    CardView sess;
+    CardView sess, book;
     Button logOut;
 
     private  FirebaseAuth mAuth;
@@ -49,8 +49,10 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         sess = findViewById(R.id.sessionsView);
+        book = findViewById(R.id.bookingsView);
 
         logOut = findViewById(R.id.button);
+
 
         uname = findViewById(R.id.user_name);
         uemail = findViewById(R.id.user_email);
@@ -67,7 +69,7 @@ public class UserActivity extends AppCompatActivity {
         doc.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                uname.setText(value.getString("User Name"));
+                uname.setText(value.getString("clientName"));
                 uemail.setText("Counsellor:" + value.getString("counName"));
                 Log.d(TAG, "Retrieved!!!");
             }
@@ -82,10 +84,17 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
+
         sess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), SessionViewActivity.class));
+            }
+        });
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SessionActivity.class));
             }
         });
 

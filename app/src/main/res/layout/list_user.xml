@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sess_card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sess_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    sess_card:cardBackgroundColor="@color/colorPrimary"
+    sess_card:cardCornerRadius="10dp"
+    sess_card:contentPadding="10dp"
+    android:elevation="10dp">
+
+<LinearLayout
+        android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="15dp">
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
         <TextView
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@color/TextColor"/>
 
         <TextView
             android:id="@+id/userInfo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@color/TextColor"/>
 
         <TextView
             android:id="@+id/userInfo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@color/TextColor"/>
 
-<!--    </androidx.cardview.widget.CardView>>-->
 
 
 </LinearLayout>
+</androidx.cardview.widget.CardView>

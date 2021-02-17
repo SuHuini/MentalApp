@@ -23,6 +23,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import i.app.menthelapp.CounsellorPkg.CounsellorUserActivity;
+
 public class SignInActivity extends AppCompatActivity {
 
     TextInputEditText emailSignIn, passSignIn;
@@ -99,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
                             finish();
                         }
                         if (documentSnapshot.getString("IsCounsellor") != null) {
-                            startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), CounsellorUserActivity.class));
                             finish();
                         }
                     }

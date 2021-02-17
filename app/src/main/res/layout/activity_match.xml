@@ -40,19 +40,19 @@
                 android:layout_height="match_parent">
 
                 <RadioButton
-                    android:id="@+id/radio_grief"
+                    android:id="@+id/radio_depression"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="#2B2B2B"
-                    android:text="Grief"
+                    android:text="Depression"
                     android:textColor="@color/colorAccent" />
 
                 <RadioButton
-                    android:id="@+id/radio_trauma"
+                    android:id="@+id/radio_drug"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="#461B9B"
-                    android:text="Trauma"
+                    android:text="Drug Abuse"
                     android:textColor="@color/colorAccent" />
 
                 <RadioButton

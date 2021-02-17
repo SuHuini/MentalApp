@@ -38,7 +38,7 @@ public class MatchActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     RadioGroup rg;
-    RadioButton anxiety, trauma, general, grief;
+    RadioButton anxiety, drug, general, depression;
 
     TextView issue;
 
@@ -83,9 +83,9 @@ public class MatchActivity extends AppCompatActivity {
         issue = (TextView) findViewById(R.id.issueText);
         rg = (RadioGroup)findViewById(R.id.rg_issue);
         anxiety =(RadioButton) findViewById(R.id.radio_anxiety);
-        trauma = (RadioButton) findViewById(R.id.radio_trauma);
+        depression = (RadioButton) findViewById(R.id.radio_depression);
         general = (RadioButton) findViewById(R.id.radio_general);
-        grief = (RadioButton)findViewById(R.id.radio_grief);
+        drug = (RadioButton)findViewById(R.id.radio_drug);
 
         next = (Button) findViewById(R.id.nextBtn);
 
@@ -105,9 +105,9 @@ public class MatchActivity extends AppCompatActivity {
 
 
         anxiety.isChecked();
-        trauma.isChecked();
+        depression.isChecked();
         general.isChecked();
-        grief.isChecked();
+        drug.isChecked();
         rg.performClick();
 
         Button btn = (Button) findViewById(R.id.set_issue);
@@ -119,14 +119,14 @@ public class MatchActivity extends AppCompatActivity {
                     case R.id.radio_anxiety:
                         issue.setText("Anxiety");
                         break;
-                    case R.id.radio_grief:
-                        issue.setText("Grief");
+                    case R.id.radio_depression:
+                        issue.setText("Depression");
                         break;
                     case R.id.radio_general:
                         issue.setText("General");
                         break;
-                    case R.id.radio_trauma:
-                        issue.setText("Trauma");
+                    case R.id.radio_drug:
+                        issue.setText("Drug Abuse");
                         break;
                     default:
                         Toast.makeText(getBaseContext(),

@@ -33,7 +33,7 @@ import java.util.Map;
 public class CounsellorRegisterActivity extends AppCompatActivity {
     TextInputEditText fname, lname, license, emailcoun, passcoun;
     Button signUpButton;
-    CheckBox depression, anxiety, general;
+    CheckBox depression, anxiety, general, drug;
     //ImageView img;
 
     private static final String TAG = "EmailPassword";
@@ -68,6 +68,7 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
         depression = (CheckBox) findViewById(R.id.depression);
         anxiety = (CheckBox) findViewById(R.id.anxiety);
         general = (CheckBox) findViewById(R.id.general);
+        drug = (CheckBox) findViewById(R.id.drug_abuse);
 
 
         //img = (ImageView) findViewById(R.id.imageView);
@@ -115,6 +116,7 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                                         userInfo.put("counEmail", emailcoun.getText().toString());
                                         userInfo.put("counPassword", passcoun.getText().toString());
                                         userInfo.put("IsCounsellor", "1");
+                                        userInfo.put("id", "");
 
                                         if(depression.isChecked()){
                                             userInfo.put("specialization", "Depression");
@@ -124,6 +126,9 @@ public class CounsellorRegisterActivity extends AppCompatActivity {
                                         }
                                         if(general.isChecked()){
                                             userInfo.put("specialization", "General");
+                                        }
+                                        if(drug.isChecked()){
+                                            userInfo.put("specialization", "Drug Abuse Disorders");
                                         }
                                         dr.set(userInfo);
 

@@ -9,6 +9,9 @@ public class Session {
     String date;
     String clientEmail;
     String counEmail;
+    String attended;
+    String notattended;
+    String status;
 
     public Session() {
     }
@@ -27,6 +30,31 @@ public class Session {
 
     }
 
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getAttended() {
+        return attended;
+    }
+
+    public void setAttended(String attended) {
+        this.attended = attended;
+    }
+
+    public String getNotattended() {
+        return notattended;
+    }
+
+    public void setNotattended(String notattended) {
+        this.notattended = notattended;
+    }
 
     public String getClientEmail() {
         return clientEmail;

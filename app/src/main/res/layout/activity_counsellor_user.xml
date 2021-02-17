@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation= "vertical"
-    tools:context=".UserProfileActivity">
+    tools:context=".CounsellorPkg.CounsellorUserActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                         android:text="Client"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18dp" />
-            </RelativeLayout>
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 

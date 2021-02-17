@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SessionViewActivity"></activity>
+        <activity android:name=".ReportActivity"></activity>
+        <activity android:name=".CounsellorPkg.CounsellorUserActivity" />
+        <activity android:name=".CounsellorPkg.SessionCounActivity" />
+        <activity android:name=".CounsellorPkg.CounsellorActivity" />
+        <activity android:name=".chat.MessagingActivity" />
+        <activity android:name=".SessionViewActivity" />
         <activity
             android:name=".chat.ChatActivity"
             android:label="@string/title_activity_chat"

@@ -88,9 +88,9 @@ public class SessionActivity extends AppCompatActivity {
         doc.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                username.setText(value.getString("User Name"));
-                userEmail = value.getString("Email");
-                counname.setText("Counsellor:" + value.getString("counName") );
+                username.setText("Client: "+ value.getString("clientFName"));
+                userEmail = value.getString("clientEmail");
+                counname.setText("Counsellor: " + value.getString("counName") );
                 counemail =  value.getString("counEmail");
                 Log.d(TAG, "Retrieved!!!" + username + "" + userEmail +
                         "" + counname + "" + counemail );
@@ -149,6 +149,8 @@ public class SessionActivity extends AppCompatActivity {
         userInfo.put("counEmail",counemail);
         userInfo.put("clientEmail", userEmail);
         userInfo.put("date", time);
+        userInfo.put("status", "");
+        //userInfo.put("notattended", "");
         fStore.collection("session")
                 .add(userInfo)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

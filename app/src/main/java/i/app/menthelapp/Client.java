@@ -2,6 +2,7 @@ package i.app.menthelapp;
 
 public class Client {
 
+    private String id;
     String clientFName;
     String clientSName;
     String clientUName;
@@ -23,6 +24,23 @@ public class Client {
     }
 
     public Client(String email, String password) {
+    }
+
+    public Client(String id, String clientFName, String clientSName, String clientUName, String clientEmail, String clientPassword) {
+        this.id = id;
+        this.clientFName = clientFName;
+        this.clientSName = clientSName;
+        this.clientUName = clientUName;
+        this.clientEmail = clientEmail;
+        this.clientPassword = clientPassword;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getClientFName() {
